@@ -1,14 +1,16 @@
 function getCardTemplate(pokemonIndex) {
   return /*html*/ `
-    <div class="pokemon-card">
+    <div class="pokemon-card bg-${pokemonIndex.types[0].type.name}" >
       <div class="pokemon-card-headline">
-        <span>${pokemonIndex.name}</span>
+        <span >${pokemonIndex.name}</span>
         <span>KP:${pokemonIndex.stats[0].base_stat}</span>
         </div>
-        <div class="sprite-container">
-        <div class="sprite"><img class="sprite-images" src="${
-          pokemonIndex.sprites.other["official-artwork"].front_default
-        }"></div>
+        <div class="sprite-container" id="pokemon-card">
+        <div class="sprite bi-${
+          pokemonIndex.types[0].type.name
+        }"><img class="sprite-images" src="${
+    pokemonIndex.sprites.other["official-artwork"].front_default
+  }"></div>
         </div>
         <span>${
           pokemonIndex.types.length > 1

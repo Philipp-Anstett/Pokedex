@@ -2,7 +2,11 @@
   margin: 0px;
 }
 body {
-  background-color: bisque;
+  background-image: url(./images/background/poke-map-background.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  object-fit: cover;
+  background-attachment: fixed;
 }
 .header {
   display: flex;
@@ -46,11 +50,11 @@ body {
   display: flex;
   flex-direction: column;
   background-color: lightgreen;
-  height: 300px;
-  width: 250px;
   border-radius: 12px;
   border: 10px solid black;
   padding: 8px;
+  height: 320px;
+  width: 240px;
 }
 span {
   margin-top: 12px;
@@ -67,10 +71,6 @@ span {
 .pokemon-card-headline {
   display: flex;
   justify-content: space-between;
-}
-.sprite-container {
-  height: 200px;
-  width: 250px;
 }
 .region-navbar {
   display: flex;

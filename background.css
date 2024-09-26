@@ -1,0 +1,136 @@
+.bg-fire {
+  background-color: rgb(255, 66, 28);
+}
+.bg-grass {
+  background-color: rgb(98, 188, 90);
+}
+.bg-water {
+  background-color: rgb(44, 155, 227);
+}
+.bg-bug {
+  background-color: rgb(146, 193, 42);
+}
+.bg-normal {
+  background-color: rgb(187, 187, 170);
+}
+.bg-poison {
+  background-color: rgb(149, 83, 205);
+}
+.bg-electric {
+  background-color: rgb(255, 220, 0);
+}
+.bg-ground {
+  background-color: rgb(166, 116, 57);
+}
+.bg-fairy {
+  background-color: rgb(236, 143, 230);
+}
+.bg-psychic {
+  background-color: rgb(255, 99, 128);
+}
+.bg-fighting {
+  background-color: rgb(187, 85, 68);
+}
+.bg-rock {
+  background-color: rgb(187, 170, 102);
+}
+.bg-ice {
+  background-color: rgb(116, 207, 192);
+}
+.bg-dragon {
+  background-color: rgb(86, 112, 190);
+}
+.bg-dark {
+  background-color: rgb(78, 69, 69);
+}
+.bg-ghost {
+  background-color: rgb(110, 67, 112);
+}
+.bg-steel {
+  background-color: rgb(170, 170, 187);
+}
+.bi-fire {
+  background-image: url(./images/type-background/feuer-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-grass {
+  background-image: url(./images/type-background/pflanze-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-water {
+  background-image: url(./images/type-background/wasser-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-bug {
+  background-image: url(./images/type-background/käfer-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-normal {
+  background-image: url(./images/type-background/normal-background\ .png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-poison {
+  background-image: url(./images/type-background/gift-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-electric {
+  background-image: url(./images/type-background/elektro-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-ground {
+  background-image: url(./images/type-background/boden-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-fairy {
+  background-image: url();
+  background-position: center;
+  background-size: 100%;
+}
+.bi-psychic {
+  background-image: url(./images/type-background/psycho-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-fighting {
+  background-image: url(./images/type-background/kampf-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-rock {
+  background-image: url(./images/type-background/gestein-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-ice {
+  background-image: url(./images/type-background/eis-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-dragon {
+  background-image: url(./images/type-background/drache-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-dark {
+  background-image: url(./images/type-background/unlicht-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-ghost {
+  background-image: url(./images/type-background/geist-background.png);
+  background-position: center;
+  background-size: 100%;
+}
+.bi-steel {
+  background-image: url(./images/type-background/stahl-background.png);
+  background-position: center;
+  background-size: 100%;
+}
