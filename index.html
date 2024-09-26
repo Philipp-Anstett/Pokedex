@@ -9,19 +9,36 @@
     <script src="./template.js"></script>
     <script src="./script.js"></script>
   </head>
-  <body>
+  <body onload="init()">
     <header class="header">
-      <input
-        class="inputfield"
-        id="inputfield"
-        placeholder="Pokemon Suchen"
-        required="text"
+      <img
+        src="./images/background/pokeapi-headline.png"
+        alt="Pokedex-Schriftzug"
       />
+      <div class="search-container">
+        <input
+          class="inputfield"
+          id="inputfield"
+          placeholder="Pokemon Suchen"
+          required="text"
+        />
+        <button class="search-button">Suchen</button>
+      </div>
     </header>
+    <div class="region-navbar">
+      <button class="navbar-button" onclick="getPokemonsFromKanto()">
+        Kanto
+      </button>
+      <button class="navbar-button" onclick="getPokemonsFromJohto()">
+        Johto
+      </button>
+      <button class="navbar-button" onclick="getPokemonsFromHoenn()">
+        Hoenn
+      </button>
+      <button class="navbar-button" onclick="getBerries()">
+        Beeren anzeigen
+      </button>
+    </div>
     <div class="main-content" id="main-content"></div>
-    <button onclick="getPokemonsFromKanto()">Kanto</button>
-    <button onclick="getPokemonsFromJohto()">Johto</button>
-    <button onclick="getPokemonsFromHoenn()">Hoenn</button>
-    <button onclick="getBerries()">Beeren anzeigen</button>
   </body>
 </html>

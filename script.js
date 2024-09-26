@@ -8,31 +8,62 @@ const customOptions = {
 };
 
 const P = new Pokedex.Pokedex(customOptions);
+let pokemonData = [];
+let berrys = [];
+
+async function init() {
+  renderPokemonCardSmall();
+}
 
 async function getPokemonsFromKanto() {
+  pokemonData = [];
   for (let index = 1; index < 152; index++) {
-    const pokemon = await P.getPokemonByName(index);
-    console.log(pokemon);
+    let pokemon = await P.getPokemonByName(index);
+    pokemonData.push(pokemon);
   }
+  renderPokemonCardSmall();
 }
 
 async function getPokemonsFromJohto() {
-  for (let index = 153; index < 250; index++) {
+  pokemonData = [];
+  for (let index = 152; index < 252; index++) {
     const pokemon = await P.getPokemonByName(index);
-    console.log(pokemon);
+    pokemonData.push(pokemon);
   }
+  renderPokemonCardSmall();
 }
 
 async function getPokemonsFromHoenn() {
-  for (let index = 251; index < 350; index++) {
+  pokemonData = [];
+  for (let index = 252; index < 387; index++) {
     const pokemon = await P.getPokemonByName(index);
-    console.log(pokemon);
+    pokemonData.push(pokemon);
+  }
+  renderPokemonCardSmall();
+}
+
+function renderPokemonCardSmall() {
+  let pokeRef = document.getElementById("main-content");
+  pokeRef.innerHTML = "";
+  for (let index = 0; index < pokemonData.length; index++) {
+    const pokemonIndex = pokemonData[index];
+    pokeRef.innerHTML += getCardTemplate(pokemonIndex);
   }
 }
 
 async function getBerries() {
-  let berrys = [];
-  let berrysList = await P.getBerriesList();
-  berrys = berrysList.results;
-  console.log(berrys);
+  for (let indexBerrys = 1; indexBerrys < 63; indexBerrys++) {
+    const berrysList = await P.getBerriesList(indexBerrys);
+    berrys.push(berrysList.results[indexBerrys].name);
+    console.log(berrysList.results[indexBerrys]);
+  }
+}
+
+async function renderBerrys() {
+  let berryRef = document.getElementById("main-content");
+  berryRef.innerHTML = "";
+  for (let index = 0; index < berrys.length; index++) {
+    const berryIndex = berrys[index];
+    berryRef.innerHTML += getBerrysTemplate(berryIndex);
+  }
 }
