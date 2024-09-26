@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./pokeapi-js-wrapper.js"></script>
+    <script src="./template.js"></script>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <input
+        class="inputfield"
+        id="inputfield"
+        placeholder="Pokemon Suchen"
+        required="text"
+      />
+    </header>
+    <div class="main-content" id="main-content"></div>
+    <button onclick="getPokemonsFromKanto()">Kanto</button>
+    <button onclick="getPokemonsFromJohto()">Johto</button>
+    <button onclick="getPokemonsFromHoenn()">Hoenn</button>
+    <button onclick="getBerries()">Beeren anzeigen</button>
+  </body>
+</html>
