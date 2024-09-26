@@ -14,7 +14,7 @@ function getCardTemplate(pokemonIndex) {
         </div>
         <span>${
           pokemonIndex.types.length > 1
-            ? `${pokemonIndex.types[0].type.name} / ${pokemonIndex.types[1].type.name}`
+            ? `${pokemonIndex.types[0].type.name} ${pokemonIndex.types[1].type.name}`
             : pokemonIndex.types[0].type.name
         }</span>
     </div>
