@@ -79,3 +79,4 @@ async function renderBerrys() {
     berryRef.innerHTML += getBerrysTemplate(berryIndex);
   }
 }
+/**/

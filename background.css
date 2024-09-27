@@ -1,53 +1,70 @@
 .bg-fire {
   background-color: #ff421c;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-grass {
   background-color: #62bc5a;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-water {
   background-color: #2c9be3;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-bug {
   background-color: #92c12a;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-normal {
   background-color: #bbbbaa;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-poison {
   background-color: #9553cd;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-electric {
   background-color: #ffdc00;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-ground {
   background-color: #a67439;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-fairy {
   background-color: #ec8fe6;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-psychic {
   background-color: #ff6380;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-fighting {
   background-color: #bb5544;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-rock {
   background-color: #bbaa66;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-ice {
   background-color: #74cfc0;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-dragon {
   background-color: #5670be;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-dark {
   background-color: rgb(78, 69, 69);
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-ghost {
   background-color: #6e4370;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-steel {
   background-color: #aaaabb;
+  filter: drop-shadow(9px 7px 8px);
 }
 .bi-fire {
   background-image: url(./images/type-background/feuer-background.png);
@@ -175,6 +192,7 @@
     rgba(98, 188, 90, 1) 45%,
     rgba(147, 81, 205, 1) 55%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-bug-flying {
   background: rgb(146, 193, 42);
@@ -183,6 +201,7 @@
     rgba(146, 193, 42, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-fire-flying {
   background: rgb(255, 66, 28);
@@ -191,6 +210,7 @@
     rgba(255, 66, 28, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-bug-poison {
   background: rgb(146, 193, 42);
@@ -199,6 +219,7 @@
     rgba(146, 193, 42, 1) 48%,
     rgba(149, 83, 205, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-normal-flying {
   background: rgb(187, 187, 170);
@@ -207,6 +228,7 @@
     rgba(187, 187, 170, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-poison-ground {
   background: rgb(149, 83, 205);
@@ -215,6 +237,7 @@
     rgba(149, 83, 205, 1) 48%,
     rgba(166, 116, 57, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-normal-fairy {
   background: rgb(187, 187, 170);
@@ -223,6 +246,7 @@
     rgba(187, 187, 170, 1) 48%,
     rgba(236, 143, 230, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-poison-flying {
   background: rgb(149, 83, 205);
@@ -231,6 +255,7 @@
     rgba(149, 83, 205, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-bug-grass {
   background: rgb(146, 193, 42);
@@ -239,6 +264,7 @@
     rgba(146, 193, 42, 1) 48%,
     rgba(98, 188, 90, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-water-fighting {
   background: rgb(44, 155, 227);
@@ -247,6 +273,7 @@
     rgba(44, 155, 227, 1) 48%,
     rgba(187, 85, 68, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-water-poison {
   background: rgb(44, 155, 227);
@@ -255,6 +282,7 @@
     rgba(44, 155, 227, 1) 48%,
     rgba(149, 83, 205, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-rock-ground {
   background: rgb(187, 170, 102);
@@ -263,6 +291,7 @@
     rgba(187, 170, 102, 1) 48%,
     rgba(166, 116, 57, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-water-psychic {
   background: rgb(44, 155, 227);
@@ -271,6 +300,7 @@
     rgba(44, 155, 227, 1) 48%,
     rgba(255, 99, 128, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-electric-steel {
   background: rgb(255, 220, 0);
@@ -279,6 +309,7 @@
     rgba(255, 220, 0, 1) 48%,
     rgba(170, 170, 187, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-water-ice {
   background: rgb(44, 155, 227);
@@ -287,6 +318,7 @@
     rgba(44, 155, 227, 1) 48%,
     rgba(116, 207, 192, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-ghost-poison {
   background: rgb(110, 67, 112);
@@ -295,6 +327,7 @@
     rgba(110, 67, 112, 1) 48%,
     rgba(149, 83, 205, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-grass-psychic {
   background: rgb(98, 188, 90);
@@ -303,6 +336,7 @@
     rgba(98, 188, 90, 1) 48%,
     rgba(255, 99, 128, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-ground-rock {
   background: rgb(166, 116, 57);
@@ -311,6 +345,7 @@
     rgba(166, 116, 57, 1) 48%,
     rgba(187, 170, 102, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-psychic-fairy {
   background: rgb(255, 99, 128);
@@ -319,6 +354,7 @@
     rgba(255, 99, 128, 1) 48%,
     rgba(236, 143, 230, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-ice-psychic {
   background: rgb(116, 207, 192);
@@ -327,6 +363,7 @@
     rgba(116, 207, 192, 1) 48%,
     rgba(255, 99, 128, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-water-flying {
   background: rgb(44, 155, 227);
@@ -335,6 +372,7 @@
     rgba(44, 155, 227, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-water-ice {
   background: rgb(44, 155, 227);
@@ -343,6 +381,7 @@
     rgba(44, 155, 227, 1) 48%,
     rgba(116, 207, 192, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-rock-water {
   background: rgb(187, 170, 102);
@@ -351,6 +390,7 @@
     rgba(187, 170, 102, 1) 48%,
     rgba(44, 155, 227, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-rock-flying {
   background: rgb(187, 170, 102);
@@ -359,6 +399,7 @@
     rgba(187, 170, 102, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-ice-flying {
   background: rgb(116, 207, 192);
@@ -367,6 +408,7 @@
     rgba(116, 207, 192, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-electric-flying {
   background: rgb(255, 220, 0);
@@ -375,6 +417,7 @@
     rgba(255, 220, 0, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-fire-flying {
   background: rgb(255, 66, 28);
@@ -383,6 +426,7 @@
     rgba(255, 66, 28, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-dragon-flying {
   background: rgb(86, 112, 190);
@@ -391,6 +435,7 @@
     rgba(86, 112, 190, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-water-electric {
   background: rgb(44, 155, 227);
@@ -399,6 +444,7 @@
     rgba(44, 155, 227, 1) 48%,
     rgba(255, 220, 0, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
 .bg-fairy-flying {
   background: rgba(236, 143, 230, 1);
@@ -407,4 +453,5 @@
     rgba(236, 143, 230, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
+  filter: drop-shadow(9px 7px 8px);
 }
