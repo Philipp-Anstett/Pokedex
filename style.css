@@ -1,22 +1,28 @@
 * {
   margin: 0px;
+  box-sizing: border-box;
 }
-
+body {
+  max-width: 1440px;
+  width: 100%;
+}
 .background {
   position: fixed;
   z-index: -1;
   object-fit: cover;
   width: 100%;
   height: 100vh;
-  opacity: 0.1;
+  opacity: 0.7;
+  max-width: 1440px;
+  width: 100%;
 }
-
 .header {
   display: flex;
   justify-content: center;
   gap: 20px;
   align-items: center;
   background-color: red;
+  max-width: 1440px;
   width: 100%;
   height: 110px;
 }
@@ -41,11 +47,11 @@
 }
 .main-content {
   max-width: 1440px;
-  width: 100%;
   display: flex;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 80px;
+  margin-top: 30px;
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -53,7 +59,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  border: 10px solid silver;
+  border: 5px solid darkgoldenrod;
   padding: 8px;
   height: 320px;
   width: 240px;
@@ -61,18 +67,36 @@
 span {
   margin-top: 12px;
 }
+.sprite-container {
+  position: relative;
+}
+.sprite::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
 .sprite {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 .sprite-images {
   height: 150px;
   width: 150px;
+  position: relative;
+  z-index: 3;
 }
 .pokemon-card-headline {
   display: flex;
   justify-content: space-between;
+  text-transform: uppercase;
 }
 .region-navbar {
   display: flex;
@@ -95,4 +119,49 @@ span {
 }
 .d-none {
   display: none;
+}
+.pokemon-card-headline {
+  margin-bottom: 5px;
+}
+/*.loader {
+  width: 275px;
+  height: 275px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #fff;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  position: absolute;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 275px;
+  height: 275px;
+  border-radius: 50%;
+  border-left: 4px solid #ff3d00;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}*/
+.masterball {
+  margin-left: 65px;
+  margin-top: 10px;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 550px) {
+  .header {
+    flex-direction: column;
+    height: 200px;
+  }
 }

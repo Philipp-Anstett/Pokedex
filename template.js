@@ -1,6 +1,10 @@
 function getCardTemplate(pokemonIndex) {
   return /*html*/ `
-    <div class="pokemon-card bg-${pokemonIndex.types[0].type.name}" >
+    <div class="pokemon-card ${
+      pokemonIndex.types.length > 1
+        ? `bg-${pokemonIndex.types[0].type.name}-${pokemonIndex.types[1].type.name}`
+        : `bg-${pokemonIndex.types[0].type.name}`
+    }">
       <div class="pokemon-card-headline">
         <span >${pokemonIndex.name}</span>
         <span>KP:${pokemonIndex.stats[0].base_stat}</span>

@@ -53,119 +53,119 @@
   background-image: url(./images/type-background/feuer-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-grass {
   background-image: url(./images/type-background/pflanze-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-water {
   background-image: url(./images/type-background/wasser-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-bug {
   background-image: url(./images/type-background/käfer-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-normal {
   background-image: url(./images/type-background/normal-background\ .png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-poison {
   background-image: url(./images/type-background/gift-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-electric {
   background-image: url(./images/type-background/elektro-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-ground {
   background-image: url(./images/type-background/boden-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-fairy {
   background-image: url();
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-psychic {
   background-image: url(./images/type-background/psycho-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-fighting {
   background-image: url(./images/type-background/kampf-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-rock {
   background-image: url(./images/type-background/gestein-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-ice {
   background-image: url(./images/type-background/eis-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-dragon {
   background-image: url(./images/type-background/drache-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-dark {
   background-image: url(./images/type-background/unlicht-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-ghost {
   background-image: url(./images/type-background/geist-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bi-steel {
   background-image: url(./images/type-background/stahl-background.png);
   background-position: center;
   background-size: 100%;
-  border: 5px solid silver;
+  border: 5px solid darkgoldenrod;
   border-radius: 6px;
 }
 .bg-grass-poison {
@@ -176,7 +176,7 @@
     rgba(147, 81, 205, 1) 55%
   );
 }
-.bg-bug/flying {
+.bg-bug-flying {
   background: rgb(146, 193, 42);
   background: linear-gradient(
     128deg,
@@ -184,7 +184,7 @@
     rgba(150, 202, 255, 1) 52%
   );
 }
-.bg-fire/flying {
+.bg-fire-flying {
   background: rgb(255, 66, 28);
   background: linear-gradient(
     128deg,
@@ -192,7 +192,7 @@
     rgba(150, 202, 255, 1) 52%
   );
 }
-.bg-bug/poison {
+.bg-bug-poison {
   background: rgb(146, 193, 42);
   background: linear-gradient(
     128deg,
@@ -200,7 +200,7 @@
     rgba(149, 83, 205, 1) 52%
   );
 }
-.bg-normal/flying {
+.bg-normal-flying {
   background: rgb(187, 187, 170);
   background: linear-gradient(
     128deg,
@@ -208,7 +208,7 @@
     rgba(150, 202, 255, 1) 52%
   );
 }
-.bg-poison/ground {
+.bg-poison-ground {
   background: rgb(149, 83, 205);
   background: linear-gradient(
     128deg,
@@ -216,7 +216,7 @@
     rgba(166, 116, 57, 1) 52%
   );
 }
-.bg-normal/fairy {
+.bg-normal-fairy {
   background: rgb(187, 187, 170);
   background: linear-gradient(
     128deg,
@@ -224,7 +224,7 @@
     rgba(236, 143, 230, 1) 52%
   );
 }
-.bg-poison/flying {
+.bg-poison-flying {
   background: rgb(149, 83, 205);
   background: linear-gradient(
     128deg,
@@ -232,7 +232,7 @@
     rgba(150, 202, 255, 1) 52%
   );
 }
-.bg-bug/grass {
+.bg-bug-grass {
   background: rgb(146, 193, 42);
   background: linear-gradient(
     128deg,
@@ -240,7 +240,7 @@
     rgba(98, 188, 90, 1) 52%
   );
 }
-.bg-water/fighting {
+.bg-water-fighting {
   background: rgb(44, 155, 227);
   background: linear-gradient(
     128deg,
@@ -248,7 +248,7 @@
     rgba(187, 85, 68, 1) 52%
   );
 }
-.bg-water/poison {
+.bg-water-poison {
   background: rgb(44, 155, 227);
   background: linear-gradient(
     128deg,
@@ -256,7 +256,7 @@
     rgba(149, 83, 205, 1) 52%
   );
 }
-.bg-rock/ground {
+.bg-rock-ground {
   background: rgb(187, 170, 102);
   background: linear-gradient(
     128deg,
@@ -264,7 +264,7 @@
     rgba(166, 116, 57, 1) 52%
   );
 }
-.bg-water/psychic {
+.bg-water-psychic {
   background: rgb(44, 155, 227);
   background: linear-gradient(
     128deg,
@@ -272,7 +272,7 @@
     rgba(255, 99, 128, 1) 52%
   );
 }
-.bg-electric/steel {
+.bg-electric-steel {
   background: rgb(255, 220, 0);
   background: linear-gradient(
     128deg,
@@ -280,7 +280,7 @@
     rgba(170, 170, 187, 1) 52%
   );
 }
-.bg-water/ice {
+.bg-water-ice {
   background: rgb(44, 155, 227);
   background: linear-gradient(
     128deg,
@@ -288,7 +288,7 @@
     rgba(116, 207, 192, 1) 52%
   );
 }
-.bg-ghost/poison {
+.bg-ghost-poison {
   background: rgb(110, 67, 112);
   background: linear-gradient(
     128deg,
@@ -296,7 +296,7 @@
     rgba(149, 83, 205, 1) 52%
   );
 }
-.bg-grass/psychic {
+.bg-grass-psychic {
   background: rgb(98, 188, 90);
   background: linear-gradient(
     128deg,
@@ -304,7 +304,7 @@
     rgba(255, 99, 128, 1) 52%
   );
 }
-.bg-ground/rock {
+.bg-ground-rock {
   background: rgb(166, 116, 57);
   background: linear-gradient(
     128deg,
@@ -312,7 +312,7 @@
     rgba(187, 170, 102, 1) 52%
   );
 }
-.bg-psychic/fairy {
+.bg-psychic-fairy {
   background: rgb(255, 99, 128);
   background: linear-gradient(
     128deg,
@@ -320,7 +320,7 @@
     rgba(236, 143, 230, 1) 52%
   );
 }
-.bg-ice/psychic {
+.bg-ice-psychic {
   background: rgb(116, 207, 192);
   background: linear-gradient(
     128deg,
@@ -328,7 +328,7 @@
     rgba(255, 99, 128, 1) 52%
   );
 }
-.bg-water/flying {
+.bg-water-flying {
   background: rgb(44, 155, 227);
   background: linear-gradient(
     128deg,
@@ -336,7 +336,7 @@
     rgba(150, 202, 255, 1) 52%
   );
 }
-.bg-water/ice {
+.bg-water-ice {
   background: rgb(44, 155, 227);
   background: linear-gradient(
     128deg,
@@ -344,7 +344,7 @@
     rgba(116, 207, 192, 1) 52%
   );
 }
-.bg-rock/water {
+.bg-rock-water {
   background: rgb(187, 170, 102);
   background: linear-gradient(
     128deg,
@@ -352,7 +352,7 @@
     rgba(44, 155, 227, 1) 52%
   );
 }
-.bg-rock/flying {
+.bg-rock-flying {
   background: rgb(187, 170, 102);
   background: linear-gradient(
     128deg,
@@ -360,7 +360,7 @@
     rgba(150, 202, 255, 1) 52%
   );
 }
-.bg-ice/flying {
+.bg-ice-flying {
   background: rgb(116, 207, 192);
   background: linear-gradient(
     128deg,
@@ -368,7 +368,7 @@
     rgba(150, 202, 255, 1) 52%
   );
 }
-.bg-electric/flying {
+.bg-electric-flying {
   background: rgb(255, 220, 0);
   background: linear-gradient(
     128deg,
@@ -376,7 +376,7 @@
     rgba(150, 202, 255, 1) 52%
   );
 }
-.bg-fire/flying {
+.bg-fire-flying {
   background: rgb(255, 66, 28);
   background: linear-gradient(
     128deg,
@@ -384,11 +384,27 @@
     rgba(150, 202, 255, 1) 52%
   );
 }
-.bg-dragon/flying {
+.bg-dragon-flying {
   background: rgb(86, 112, 190);
   background: linear-gradient(
     128deg,
     rgba(86, 112, 190, 1) 48%,
+    rgba(150, 202, 255, 1) 52%
+  );
+}
+.bg-water-electric {
+  background: rgb(44, 155, 227);
+  background: linear-gradient(
+    128deg,
+    rgba(44, 155, 227, 1) 48%,
+    rgba(255, 220, 0, 1) 52%
+  );
+}
+.bg-fairy-flying {
+  background: rgba(236, 143, 230, 1);
+  background: linear-gradient(
+    128deg,
+    rgba(236, 143, 230, 1) 48%,
     rgba(150, 202, 255, 1) 52%
   );
 }
