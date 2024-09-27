@@ -1,13 +1,16 @@
 * {
   margin: 0px;
 }
-body {
-  background-image: url(./images/background/poke-map-background.png);
-  background-repeat: no-repeat;
-  background-position: top;
+
+.background {
+  position: fixed;
+  z-index: -1;
   object-fit: cover;
-  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.1;
 }
+
 .header {
   display: flex;
   justify-content: center;
@@ -80,4 +83,16 @@ span {
 .navbar-button {
   cursor: pointer;
   border-radius: 6px;
+}
+.spinner-loadingscreen {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d-none {
+  display: none;
 }

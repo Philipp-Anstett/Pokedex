@@ -12,7 +12,19 @@ let pokemonData = [];
 let berrys = [];
 
 async function init() {
+  loadingSpinnerActive();
+  await getPokemonsFromKanto();
+  hideLoadingSpinner();
   renderPokemonCardSmall();
+}
+
+function loadingSpinnerActive() {
+  document.getElementById("spinner-loadingscreen").classList.remove("d-none");
+  document.getElementById("main-content").classList.add("d-none");
+}
+function hideLoadingSpinner() {
+  document.getElementById("spinner-loadingscreen").classList.add("d-none");
+  document.getElementById("main-content").classList.remove("d-none");
 }
 
 async function getPokemonsFromKanto() {
