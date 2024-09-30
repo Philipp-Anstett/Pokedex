@@ -9,7 +9,27 @@ const customOptions = {
 
 const P = new Pokedex.Pokedex(customOptions);
 let pokemonData = [];
-let berrys = [];
+
+const germanTypes = {
+  fire: "Feuer",
+  grass: "Pflanze",
+  water: "Wasser",
+  bug: "Käfer",
+  normal: "Normal",
+  poison: "Gift",
+  electric: "Elektro",
+  ground: "Boden",
+  fairy: "Fee",
+  psychic: "Psycho",
+  fighting: "Kampf",
+  rock: "Gestein",
+  ice: "Eis",
+  dragon: "Drache",
+  dark: "Unlicht",
+  ghost: "Geist",
+  steel: "Stahl",
+  flying: "Flug",
+};
 
 async function init() {
   loadingSpinnerActive();
@@ -28,27 +48,54 @@ function hideLoadingSpinner() {
 }
 
 async function getPokemonsFromKanto() {
-  pokemonData = [];
   for (let index = 1; index < 152; index++) {
     let pokemon = await P.getPokemonByName(index);
+    const speciesResponse = await fetch(pokemon.species.url);
+    const speciesData = await speciesResponse.json();
+    const germanText = speciesData.flavor_text_entries.find(
+      (entry) => entry.language.name === "de"
+    );
+    const nameInGerman = speciesData.names.find(
+      (nameEntry) => nameEntry.language.name === "de"
+    );
+    pokemon.description = germanText.flavor_text;
+    pokemon.name = nameInGerman.name;
     pokemonData.push(pokemon);
   }
   renderPokemonCardSmall();
 }
 
 async function getPokemonsFromJohto() {
-  pokemonData = [];
   for (let index = 152; index < 252; index++) {
     const pokemon = await P.getPokemonByName(index);
+    const speciesResponse = await fetch(pokemon.species.url);
+    const speciesData = await speciesResponse.json();
+    const germanText = speciesData.flavor_text_entries.find(
+      (entry) => entry.language.name === "de"
+    );
+    const germanName = speciesData.names.find(
+      (nameEntry) => nameEntry.language.name === "de"
+    );
+    pokemon.description = germanText.flavor_text;
+    pokemon.name = germanName.name;
     pokemonData.push(pokemon);
   }
   renderPokemonCardSmall();
 }
 
 async function getPokemonsFromHoenn() {
-  pokemonData = [];
   for (let index = 252; index < 387; index++) {
     const pokemon = await P.getPokemonByName(index);
+    const speciesResponse = await fetch(pokemon.species.url);
+    const speciesData = await speciesResponse.json();
+    const germanText = speciesData.flavor_text_entries.find(
+      (entry) => entry.language.name === "de"
+    );
+    const germanName = speciesData.names.find(
+      (nameEntry) => nameEntry.language.name === "de"
+    );
+    pokemon.description = germanText.flavor_text;
+    pokemon.name = germanName.name;
     pokemonData.push(pokemon);
   }
   renderPokemonCardSmall();
@@ -62,21 +109,3 @@ function renderPokemonCardSmall() {
     pokeRef.innerHTML += getCardTemplate(pokemonIndex);
   }
 }
-
-async function getBerries() {
-  for (let indexBerrys = 1; indexBerrys < 63; indexBerrys++) {
-    const berrysList = await P.getBerriesList(indexBerrys);
-    berrys.push(berrysList.results[indexBerrys].name);
-    console.log(berrysList.results[indexBerrys]);
-  }
-}
-
-async function renderBerrys() {
-  let berryRef = document.getElementById("main-content");
-  berryRef.innerHTML = "";
-  for (let index = 0; index < berrys.length; index++) {
-    const berryIndex = berrys[index];
-    berryRef.innerHTML += getBerrysTemplate(berryIndex);
-  }
-}
-/**/

@@ -17,23 +17,12 @@ function getCardTemplate(pokemonIndex) {
         </div>
         <span>${
           pokemonIndex.types.length > 1
-            ? `${pokemonIndex.types[0].type.name} ${pokemonIndex.types[1].type.name}`
-            : pokemonIndex.types[0].type.name
+            ? `${germanTypes[pokemonIndex.types[0].type.name]} ${
+                germanTypes[pokemonIndex.types[1].type.name]
+              }`
+            : germanTypes[pokemonIndex.types[0].type.name]
         }</span>
+        <span class="description">${pokemonIndex.description}</span>
     </div>
     `;
-}
-
-function getBerrysTemplate() {
-  return /*html*/ `
-  <div class="berry-card">
-<span></span>
-<span></span>
-<div class="berry-sprites">
-  <img src="" alt="">
-</div>
-
-  </div>
-  
-  `;
 }
