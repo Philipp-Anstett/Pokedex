@@ -111,6 +111,7 @@
       />
       <div class="search-container">
         <input
+          oninput="searchPokemon()"
           class="inputfield"
           id="inputfield"
           placeholder="Pokemon Suchen"
@@ -131,5 +132,8 @@
       </button>
     </div>
     <div class="main-content" id="main-content"></div>
+    <div class="render-button">
+      <button id="renderMore">Load more Pokemon</button>
+    </div>
   </body>
 </html>

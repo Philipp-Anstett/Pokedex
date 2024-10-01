@@ -50,12 +50,14 @@ function hideLoadingSpinner() {
 async function getPokemonsFromKanto() {
   for (let index = 1; index < 152; index++) {
     let pokemon = await P.getPokemonByName(index);
-    const speciesResponse = await fetch(pokemon.species.url);
-    const speciesData = await speciesResponse.json();
-    const germanText = speciesData.flavor_text_entries.find(
+    const getSpecies = await fetch(pokemon.species.url);
+    const getSpeciesData = await getSpecies.json();
+    /*console.log(getSpeciesData.flavor_text_entries);*/
+    /*console.log(getSpeciesData.names);*/
+    const germanText = getSpeciesData.flavor_text_entries.find(
       (entry) => entry.language.name === "de"
     );
-    const nameInGerman = speciesData.names.find(
+    const nameInGerman = getSpeciesData.names.find(
       (nameEntry) => nameEntry.language.name === "de"
     );
     pokemon.description = germanText.flavor_text;
@@ -68,12 +70,12 @@ async function getPokemonsFromKanto() {
 async function getPokemonsFromJohto() {
   for (let index = 152; index < 252; index++) {
     const pokemon = await P.getPokemonByName(index);
-    const speciesResponse = await fetch(pokemon.species.url);
-    const speciesData = await speciesResponse.json();
-    const germanText = speciesData.flavor_text_entries.find(
+    const getSpecies = await fetch(pokemon.species.url);
+    const getSpeciesData = await getSpecies.json();
+    const germanText = getSpeciesData.flavor_text_entries.find(
       (entry) => entry.language.name === "de"
     );
-    const germanName = speciesData.names.find(
+    const germanName = getSpeciesData.names.find(
       (nameEntry) => nameEntry.language.name === "de"
     );
     pokemon.description = germanText.flavor_text;
@@ -86,12 +88,12 @@ async function getPokemonsFromJohto() {
 async function getPokemonsFromHoenn() {
   for (let index = 252; index < 387; index++) {
     const pokemon = await P.getPokemonByName(index);
-    const speciesResponse = await fetch(pokemon.species.url);
-    const speciesData = await speciesResponse.json();
-    const germanText = speciesData.flavor_text_entries.find(
+    const getSpecies = await fetch(pokemon.species.url);
+    const getSpeciesData = await getSpecies.json();
+    const germanText = getSpeciesData.flavor_text_entries.find(
       (entry) => entry.language.name === "de"
     );
-    const germanName = speciesData.names.find(
+    const germanName = getSpeciesData.names.find(
       (nameEntry) => nameEntry.language.name === "de"
     );
     pokemon.description = germanText.flavor_text;
@@ -107,5 +109,20 @@ function renderPokemonCardSmall() {
   for (let index = 0; index < pokemonData.length; index++) {
     const pokemonIndex = pokemonData[index];
     pokeRef.innerHTML += getCardTemplate(pokemonIndex);
+  }
+}
+
+function searchPokemon() {
+  let searchInput = document.getElementById("inputfield").value.toLowerCase();
+  if (searchInput.length > 2) {
+    document.getElementById("main-content").innerHTML = "";
+    for (let index = 0; index < pokemonData.length; index++) {
+      if (pokemonData[index].name.toLowerCase().startsWith(searchInput)) {
+        document.getElementById("main-content").innerHTML +=
+          renderSingleCardSmall(pokemonData[index]);
+      }
+    }
+  } else {
+    renderPokemonCardSmall();
   }
 }

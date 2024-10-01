@@ -21,7 +21,7 @@ body {
   justify-content: center;
   gap: 20px;
   align-items: center;
-  background-color: rgb(255 66 28 / 84%);
+  background-color: #ff0000c7;
   max-width: 1440px;
   width: 100%;
   height: 110px;
@@ -263,7 +263,7 @@ span {
 }
 .navbar-button {
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 12px;
 }
 .spinner-loadingscreen {
   position: absolute;
@@ -321,4 +321,15 @@ span {
 }
 .description {
   font-size: 14px;
+}
+.render-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#renderMore {
+  cursor: pointer;
+  background-color: red;
+  border-radius: 12px;
 }
