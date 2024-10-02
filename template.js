@@ -1,4 +1,6 @@
-function getCardTemplate(pokemonIndex) {
+import { germanTypes } from "./types.js";
+
+export function getCardTemplate(pokemonIndex) {
   return /*html*/ `
     <div class="pokemon-card ${
       pokemonIndex.types.length > 1
@@ -15,19 +17,35 @@ function getCardTemplate(pokemonIndex) {
           pokemonIndex.sprites.other["official-artwork"].front_default
         }"></div>
         </div>
-        <span>${
-          pokemonIndex.types.length > 1
-            ? `${germanTypes[pokemonIndex.types[0].type.name]} ${
-                germanTypes[pokemonIndex.types[1].type.name]
-              }`
-            : germanTypes[pokemonIndex.types[0].type.name]
-        }</span>
+        <div class="types-container">
+             ${
+               pokemonIndex.types.length > 1
+                 ? `<span class="type-container"><img class="type-svg" src="${
+                     germanTypes[pokemonIndex.types[0].type.name].svg
+                   }" alt="${
+                     germanTypes[pokemonIndex.types[0].type.name].name
+                   } Icon" />
+             ${germanTypes[pokemonIndex.types[0].type.name].name}</span>
+                    <span class="type-container"><img class="type-svg" src="${
+                      germanTypes[pokemonIndex.types[1].type.name].svg
+                    }" alt="${
+                     germanTypes[pokemonIndex.types[1].type.name].name
+                   } Icon" />
+             ${germanTypes[pokemonIndex.types[1].type.name].name}</span>`
+                 : `<span class="type-container"><img class="type-svg" src="${
+                     germanTypes[pokemonIndex.types[0].type.name].svg
+                   }" alt="${
+                     germanTypes[pokemonIndex.types[0].type.name].name
+                   } Icon" />
+         ${germanTypes[pokemonIndex.types[0].type.name].name}</span>`
+             }
+</div>
         <span class="description">${pokemonIndex.description}</span>
     </div>
     `;
 }
 
-function renderSingleCardSmall(pokemonIndex) {
+export function getSingleCardTemplate(pokemonIndex) {
   return /*html*/ `
     <div class="pokemon-card ${
       pokemonIndex.types.length > 1

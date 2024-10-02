@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./background.css" />
     <script src="./pokeapi-js-wrapper.js"></script>
-    <script src="./template.js"></script>
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
   </head>
   <body onload="init()">
     <img class="background" src="./images/background/poke-map-background.png" />
@@ -16,8 +15,8 @@
       <span class="loader"></span>
       <svg
         class="masterball"
-        width="30%"
-        height="30%"
+        width="100%"
+        height="100%"
         viewBox="0 0 1080 1080"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +28,8 @@
           clip-rule: evenodd;
           stroke-linejoin: round;
           stroke-miterlimit: 2;
+          max-width: 200px;
+          max-height: 200px;
         "
       >
         <g transform="matrix(1,0,0,1,-7378.94,-1229.74)">
@@ -102,7 +103,6 @@
           </g>
         </g>
       </svg>
-      Loading...
     </div>
     <header class="header">
       <img

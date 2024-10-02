@@ -68,122 +68,54 @@
 }
 .bi-fire {
   background-image: url(./images/type-background/feuer-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-grass {
   background-image: url(./images/type-background/pflanze-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-water {
   background-image: url(./images/type-background/wasser-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-bug {
   background-image: url(./images/type-background/käfer-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-normal {
   background-image: url(./images/type-background/normal-background\ .png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-poison {
   background-image: url(./images/type-background/gift-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-electric {
   background-image: url(./images/type-background/elektro-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-ground {
   background-image: url(./images/type-background/boden-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-fairy {
   background-image: url(./images/type-background/fairy-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-psychic {
   background-image: url(./images/type-background/psycho-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-fighting {
   background-image: url(./images/type-background/kampf-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-rock {
   background-image: url(./images/type-background/gestein-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-ice {
   background-image: url(./images/type-background/eis-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-dragon {
   background-image: url(./images/type-background/drache-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-dark {
   background-image: url(./images/type-background/unlicht-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-ghost {
   background-image: url(./images/type-background/geist-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bi-steel {
   background-image: url(./images/type-background/stahl-background.png);
-  background-position: center;
-  background-size: 100%;
-  border: 5px solid darkgoldenrod;
-  border-radius: 6px;
 }
 .bg-grass-poison {
   background: rgb(98, 188, 90);

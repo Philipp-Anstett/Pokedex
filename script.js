@@ -1,3 +1,10 @@
+import { getCardTemplate, getSingleCardTemplate } from "./template.js";
+
+window.init = init;
+window.getPokemonsFromKanto = getPokemonsFromKanto;
+window.getPokemonsFromJohto = getPokemonsFromJohto;
+window.getPokemonsFromHoenn = getPokemonsFromHoenn;
+
 const customOptions = {
   protocol: "https",
   hostName: "pokeapi.co",
@@ -9,27 +16,6 @@ const customOptions = {
 
 const P = new Pokedex.Pokedex(customOptions);
 let pokemonData = [];
-
-const germanTypes = {
-  fire: "Feuer",
-  grass: "Pflanze",
-  water: "Wasser",
-  bug: "Käfer",
-  normal: "Normal",
-  poison: "Gift",
-  electric: "Elektro",
-  ground: "Boden",
-  fairy: "Fee",
-  psychic: "Psycho",
-  fighting: "Kampf",
-  rock: "Gestein",
-  ice: "Eis",
-  dragon: "Drache",
-  dark: "Unlicht",
-  ghost: "Geist",
-  steel: "Stahl",
-  flying: "Flug",
-};
 
 async function init() {
   loadingSpinnerActive();
@@ -47,21 +33,32 @@ function hideLoadingSpinner() {
   document.getElementById("main-content").classList.remove("d-none");
 }
 
+function getGermanData(speciesData) {
+  const germanName = speciesData.names.find(
+    (nameEntry) => nameEntry.language.name === "de"
+  );
+  const germanText = speciesData.flavor_text_entries.find(
+    (entry) => entry.language.name === "de"
+  );
+
+  return {
+    name: germanName.name,
+    text: germanText.flavor_text,
+  };
+}
+
+async function getPokemonData(index) {
+  const pokemon = await P.getPokemonByName(index);
+  const getSpecies = await fetch(pokemon.species.url);
+  const getSpeciesData = await getSpecies.json();
+  pokemon.description = getGermanData(getSpeciesData).text;
+  pokemon.name = getGermanData(getSpeciesData).name;
+  return pokemon;
+}
+
 async function getPokemonsFromKanto() {
   for (let index = 1; index < 152; index++) {
-    let pokemon = await P.getPokemonByName(index);
-    const getSpecies = await fetch(pokemon.species.url);
-    const getSpeciesData = await getSpecies.json();
-    /*console.log(getSpeciesData.flavor_text_entries);*/
-    /*console.log(getSpeciesData.names);*/
-    const germanText = getSpeciesData.flavor_text_entries.find(
-      (entry) => entry.language.name === "de"
-    );
-    const nameInGerman = getSpeciesData.names.find(
-      (nameEntry) => nameEntry.language.name === "de"
-    );
-    pokemon.description = germanText.flavor_text;
-    pokemon.name = nameInGerman.name;
+    const pokemon = await getPokemonData(index);
     pokemonData.push(pokemon);
   }
   renderPokemonCardSmall();
@@ -69,17 +66,7 @@ async function getPokemonsFromKanto() {
 
 async function getPokemonsFromJohto() {
   for (let index = 152; index < 252; index++) {
-    const pokemon = await P.getPokemonByName(index);
-    const getSpecies = await fetch(pokemon.species.url);
-    const getSpeciesData = await getSpecies.json();
-    const germanText = getSpeciesData.flavor_text_entries.find(
-      (entry) => entry.language.name === "de"
-    );
-    const germanName = getSpeciesData.names.find(
-      (nameEntry) => nameEntry.language.name === "de"
-    );
-    pokemon.description = germanText.flavor_text;
-    pokemon.name = germanName.name;
+    const pokemon = await getPokemonData(index);
     pokemonData.push(pokemon);
   }
   renderPokemonCardSmall();
@@ -87,17 +74,7 @@ async function getPokemonsFromJohto() {
 
 async function getPokemonsFromHoenn() {
   for (let index = 252; index < 387; index++) {
-    const pokemon = await P.getPokemonByName(index);
-    const getSpecies = await fetch(pokemon.species.url);
-    const getSpeciesData = await getSpecies.json();
-    const germanText = getSpeciesData.flavor_text_entries.find(
-      (entry) => entry.language.name === "de"
-    );
-    const germanName = getSpeciesData.names.find(
-      (nameEntry) => nameEntry.language.name === "de"
-    );
-    pokemon.description = germanText.flavor_text;
-    pokemon.name = germanName.name;
+    const pokemon = await getPokemonData(index);
     pokemonData.push(pokemon);
   }
   renderPokemonCardSmall();
@@ -119,7 +96,7 @@ function searchPokemon() {
     for (let index = 0; index < pokemonData.length; index++) {
       if (pokemonData[index].name.toLowerCase().startsWith(searchInput)) {
         document.getElementById("main-content").innerHTML +=
-          renderSingleCardSmall(pokemonData[index]);
+          getSingleCardTemplate(pokemonData[index]);
       }
     }
   } else {
