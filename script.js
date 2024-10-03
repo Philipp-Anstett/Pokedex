@@ -1,9 +1,20 @@
-import { getCardTemplate, getSingleCardTemplate } from "./template.js";
+import {
+  getCardTemplate,
+  getSingleCardTemplate,
+  getBigCardTemplate,
+} from "./template.js";
 
 window.init = init;
 window.getPokemonsFromKanto = getPokemonsFromKanto;
 window.getPokemonsFromJohto = getPokemonsFromJohto;
 window.getPokemonsFromHoenn = getPokemonsFromHoenn;
+window.searchPokemon = searchPokemon;
+window.renderMore = renderMore;
+window.renderPokemonCardLarge = renderPokemonCardLarge;
+window.closePokemonCardLarge = closePokemonCardLarge;
+window.previousPokemon = previousPokemon;
+window.nextPokemon = nextPokemon;
+window.renderChart = renderChart;
 
 const customOptions = {
   protocol: "https",
@@ -16,6 +27,8 @@ const customOptions = {
 
 const P = new Pokedex.Pokedex(customOptions);
 let pokemonData = [];
+let loadLimit = 10;
+let ctx = "";
 
 async function init() {
   loadingSpinnerActive();
@@ -57,15 +70,17 @@ async function getPokemonData(index) {
 }
 
 async function getPokemonsFromKanto() {
-  for (let index = 1; index < 152; index++) {
+  for (let index = pokemonData.length + 1; index <= loadLimit; index++) {
+    if (pokemonData.length > 150) return;
     const pokemon = await getPokemonData(index);
     pokemonData.push(pokemon);
   }
-  renderPokemonCardSmall();
+  loadLimit += 20;
 }
 
 async function getPokemonsFromJohto() {
   for (let index = 152; index < 252; index++) {
+    if (pokemonData.length > 251) return;
     const pokemon = await getPokemonData(index);
     pokemonData.push(pokemon);
   }
@@ -85,8 +100,43 @@ function renderPokemonCardSmall() {
   pokeRef.innerHTML = "";
   for (let index = 0; index < pokemonData.length; index++) {
     const pokemonIndex = pokemonData[index];
-    pokeRef.innerHTML += getCardTemplate(pokemonIndex);
+    pokeRef.innerHTML += getCardTemplate(pokemonIndex, index);
   }
+  return;
+}
+
+let currentIndexBigCard = 1;
+
+function renderPokemonCardLarge(index) {
+  let largeCardRef = document.getElementById("big-card-overlay");
+  largeCardRef.classList.remove("d-none");
+  largeCardRef.classList.add("d-flex");
+  let largeContentRef = document.getElementById("big-card");
+  largeContentRef.classList.add("z");
+  const pokemonIndex = pokemonData[index - 1];
+  largeCardRef.innerHTML = getBigCardTemplate(pokemonIndex);
+  currentIndexBigCard = index;
+  renderChart(pokemonIndex);
+}
+
+function previousPokemon(currentIndexBigCard) {
+  if (currentIndexBigCard > 1) {
+    currentIndexBigCard--;
+    renderPokemonCardLarge(currentIndexBigCard);
+  }
+}
+
+function nextPokemon(currentIndexBigCard) {
+  if (currentIndexBigCard < 151) {
+    currentIndexBigCard++;
+    renderPokemonCardLarge(currentIndexBigCard);
+  }
+}
+
+function closePokemonCardLarge() {
+  let largeCardRef = document.getElementById("big-card-overlay");
+  largeCardRef.classList.add("d-none");
+  largeCardRef.classList.remove("display-flex");
 }
 
 function searchPokemon() {
@@ -102,4 +152,48 @@ function searchPokemon() {
   } else {
     renderPokemonCardSmall();
   }
+}
+
+async function renderMore() {
+  loadingSpinnerActive();
+  await getPokemonsFromKanto();
+  renderPokemonCardSmall();
+  hideLoadingSpinner();
+}
+
+async function renderChart(pokemonIndex) {
+  ctx = document.getElementById("attributeChart");
+
+  const data = {
+    labels: ["KP", "Ang", "Vert", "Sp-Ang", "Sp-Vert", "Init"],
+    datasets: [
+      {
+        label: "Pokemon-Statuswerte",
+        data: [
+          pokemonIndex.stats[0].base_stat,
+          pokemonIndex.stats[1].base_stat,
+          pokemonIndex.stats[2].base_stat,
+          pokemonIndex.stats[3].base_stat,
+          pokemonIndex.stats[4].base_stat,
+          pokemonIndex.stats[5].base_stat,
+        ],
+        backgroundColor: [
+          "lightgreen",
+          "red",
+          "orange",
+          "yellow",
+          "turquoise",
+          "blue",
+        ],
+        borderColor: "black" /*"#ffd700",*/,
+        color: "black",
+      },
+    ],
+  };
+
+  new Chart(ctx, {
+    type: "bar",
+    data: data,
+    options: {},
+  });
 }

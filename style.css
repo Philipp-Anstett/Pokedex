@@ -20,7 +20,11 @@ body {
   align-items: center;
   background-color: #ff0000c7;
   width: 100%;
-  height: 110px;
+  height: 80px;
+}
+.pokemon-image {
+  height: 80px;
+  width: 250px;
 }
 .inputfield {
   justify-content: center;
@@ -255,7 +259,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 .navbar-button {
   cursor: pointer;
@@ -269,9 +274,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 .d-none {
   display: none;
+}
+.d-flex {
+  display: flex;
 }
 .loader {
   width: 275px;
@@ -328,7 +337,6 @@ body {
 .type-svg {
   width: 20px;
   height: auto;
-  /* filter: drop-shadow(3px 1px 0px black); */
 }
 
 .types-container {
@@ -346,4 +354,266 @@ body {
   border-radius: 100vw;
   padding: 5px 15px;
   filter: drop-shadow(1px 1px 1px white);
+}
+.overlay-card {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #ffd700;
+  padding: 8px;
+  height: 680px;
+  width: 480px;
+  cursor: pointer;
+  /**/
+  border-radius: 5% / 3.5%;
+  box-shadow: -5px -5px 5px -5px var(--color1), 5px 5px 5px -5px var(--color2),
+    -7px -7px 10px -5px transparent, 7px 7px 10px -5px transparent,
+    0 0 5px 0px rgba(255, 255, 255, 0), 0 55px 35px -20px rgba(0, 0, 0, 0.5);
+
+  transition: transform 0.5s ease, box-shadow 0.2s ease;
+  will-change: transform, filter;
+
+  background-color: #040712;
+  background-image: var(--front);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transform-origin: center;
+}
+.overlay-card:hover {
+  box-shadow: -20px -20px 30px -25px var(--color1),
+    20px 20px 30px -25px var(--color2), -7px -7px 10px -5px var(--color1),
+    7px 7px 10px -5px var(--color2), 0 0 13px 4px rgba(255, 255, 255, 0.3),
+    0 55px 35px -20px rgba(0, 0, 0, 0.5);
+}
+:root {
+  --color1: #efb2fb;
+  --color2: #acc6f8;
+}
+.overlay-card:before,
+.overlay-card:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  mix-blend-mode: color-dodge;
+  transition: all 0.33s ease;
+}
+.overlay-card:before {
+  background-position: 50% 50%;
+  background-size: 300% 300%;
+  background-image: linear-gradient(
+    115deg,
+    transparent 0%,
+    var(--color1) 25%,
+    transparent 47%,
+    transparent 53%,
+    var(--color2) 75%,
+    transparent 100%
+  );
+  opacity: 0.5;
+  filter: brightness(0.5) contrast(1);
+  z-index: 1;
+}
+.overlay-card:after {
+  opacity: 1;
+  background-image: url("https://assets.codepen.io/13471/sparkles.gif"),
+    url(https://assets.codepen.io/13471/holo.png),
+    linear-gradient(
+      125deg,
+      #ff008450 15%,
+      #fca40040 30%,
+      #ffff0030 40%,
+      #00ff8a20 60%,
+      #00cfff40 70%,
+      #cc4cfa50 85%
+    );
+  background-position: 50% 50%;
+  background-size: 160%;
+  background-blend-mode: overlay;
+  z-index: 2;
+  filter: brightness(1) contrast(1);
+  transition: all 0.33s ease;
+  mix-blend-mode: color-dodge;
+  opacity: 0.75;
+}
+.overlay-card.active:after,
+.card:hover:after {
+  filter: brightness(1) contrast(1);
+  opacity: 1;
+}
+.overlay-card.active,
+.card:hover {
+  animation: none;
+  transition: box-shadow 0.1s ease-out;
+}
+
+.overlay-card-headline {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  margin-top: 14px;
+}
+.overlay-images {
+  height: 250px;
+  width: 250px;
+  position: relative;
+  z-index: 3;
+}
+.big-card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.big-card-overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+.types-container-big-card {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 100vw;
+  padding: 5px 15px;
+  filter: drop-shadow(1px 1px 1px white);
+  margin-top: 10px;
+}
+.type-container-big-card {
+  display: flex;
+  gap: 5px;
+}
+.overlay-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.switch-pokemon {
+  border-radius: 50%;
+  border: 3px solid #ffd700;
+  font-size: 20px;
+  background-color: transparent;
+  color: #ffd700;
+  z-index: 11;
+  cursor: pointer;
+}
+.canvas {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 280px;
+  color: black;
+}
+.z {
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5;
+}
+.button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 55px;
+  position: relative;
+  background-color: white;
+  padding: 12px 24px;
+  border-radius: 3rem;
+  border: 1px solid red;
+  padding: 12px;
+  transition: 0.4s;
+}
+.button-text {
+  position: relative;
+  z-index: 1;
+}
+.button img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  pointer-events: none;
+  transition: 0.6s;
+  opacity: 0;
+}
+.button-bisasam {
+  width: 60px;
+  transform: translate(-25px, -6px) rotate(75deg);
+}
+.button-schiggy {
+  width: 40px;
+  transform: translate(7px, -34px) rotate(80deg);
+}
+.button-glumanda {
+  width: 48px;
+  transform: translate(34px, -4px) rotate(-45deg);
+}
+.button-pikachu {
+  width: 40px;
+  transform: translate(-5px, 15px) rotate(40deg);
+}
+.button-evoli {
+  width: 40px;
+  transform: translate(-50px, 25px) rotate(40deg);
+}
+.button-voltobal {
+  width: 40px;
+  transform: translate(35px, -5px) rotate(40deg);
+}
+.button-ditto {
+  width: 40px;
+  transform: translate(30px, -10px) rotate(40deg);
+}
+.button:hover::after {
+  opacity: 1;
+}
+.button:hover img {
+  opacity: 1;
+}
+.button:hover .button-bisasam {
+  transform: translate(-30px, -18px) scale(1.6);
+  transition: 0.5s;
+}
+.button:hover .button-schiggy {
+  transform: translate(10px, -25px) scale(2);
+  transition: 0.8s;
+}
+.button:hover .button-glumanda {
+  transform: translate(50px, -20px) scale(1.8);
+  transition: 1.1s;
+}
+.button:hover .button-pikachu {
+  transform: translate(-14px, 20px) scale(2);
+  transition: 1.4s;
+}
+.button:hover .button-evoli {
+  transform: translate(-45px, 15px) scale(1.8);
+  transition: 1.7s;
+}
+.button:hover .button-voltobal {
+  transform: translate(15px, 25px) scale(2);
+  transition: 2s;
+}
+.button:hover .button-ditto {
+  transform: translate(50px, 20px) scale(2.2);
+  transition: 2.3s;
 }

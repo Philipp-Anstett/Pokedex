@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./background.css" />
     <script src="./pokeapi-js-wrapper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="./script.js"></script>
   </head>
   <body onload="init()">
     <img class="background" src="./images/background/poke-map-background.png" />
+    <!--loading-spinner-->
     <div id="spinner-loadingscreen" class="spinner-loadingscreen d-none">
       <span class="loader"></span>
       <svg
@@ -104,8 +106,10 @@
         </g>
       </svg>
     </div>
+    <!--header-section-->
     <header class="header">
       <img
+        class="pokemon-image"
         src="./images/background/pokeapi-headline.png"
         alt="Pokedex-Schriftzug"
       />
@@ -117,9 +121,21 @@
           placeholder="Pokemon Suchen"
           required="text"
         />
-        <button class="search-button">Suchen</button>
+      </div>
+      <div class="button-content">
+        <a href="./order.html" class="button">
+          <span class="button-text"> Zur Demo </span>
+          <img class="button-bisasam" src="./images/bisasam.png" />
+          <img class="button-schiggy" src="./images/schiggy.png" />
+          <img class="button-glumanda" src="./images/glumanda.png" />
+          <img class="button-pikachu" src="./images/pikachu.png" />
+          <img class="button-evoli" src="./images/evoli.png" />
+          <img class="button-voltobal" src="./images/voltobal.png" />
+          <img class="button-ditto" src="./images/ditto.png" />
+        </a>
       </div>
     </header>
+    <!--navbar-section-->
     <div class="region-navbar">
       <button class="navbar-button" onclick="getPokemonsFromKanto()">
         Kanto
@@ -131,9 +147,18 @@
         Hoenn
       </button>
     </div>
+    <!--big-card-section-->
+    <div
+      onclick="closePokemonCardLarge()"
+      id="big-card"
+      class="big-card d-none"
+    >
+      <div id="big-card-overlay" class="big-card-overlay d-none"></div>
+    </div>
+    <!--content-section-->
     <div class="main-content" id="main-content"></div>
     <div class="render-button">
-      <button id="renderMore">Load more Pokemon</button>
+      <button onclick="renderMore()" id="renderMore">Load more Pokemon</button>
     </div>
   </body>
 </html>
