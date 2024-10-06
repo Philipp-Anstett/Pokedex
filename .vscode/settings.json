@@ -1,14 +1,21 @@
 {
   "cSpell.words": [
+    "behaviour",
     "berrys",
+    "bisaflor",
+    "Bisaflor",
     "bisasam",
     "colorcode",
+    "dialoque",
     "drache",
     "Elektro",
+    "emby",
     "evoli",
     "geist",
     "gestein",
     "glumanda",
+    "Glurak",
+    "gsap",
     "hoenn",
     "inputfield",
     "johto",
@@ -27,9 +34,13 @@
     "Pokedex",
     "pokemon",
     "Pokemons",
+    "renderable",
+    "renderables",
     "schiggy",
     "unlicht",
-    "voltobal"
+    "voltobal",
+    "wasd",
+    "yoyo"
   ],
   "git.ignoreLimitWarning": true
 }

@@ -94,7 +94,7 @@ export function getSingleCardTemplate(pokemonIndex) {
 
 export function getBigCardTemplate(pokemonIndex) {
   return /*html*/ `
-    <div  class=" overlay-card  ${
+    <div onclick="event.stopPropagation();" class=" overlay-card  ${
       pokemonIndex.types.length > 1
         ? `bg-${pokemonIndex.types[0].type.name}-${pokemonIndex.types[1].type.name}`
         : `bg-${pokemonIndex.types[0].type.name}`

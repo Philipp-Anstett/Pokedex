@@ -6,6 +6,12 @@
     <title>Pokedex</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./background.css" />
+    <link rel="stylesheet" href="./card-big.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/pokeball-favicon.png"
+      type="image/png"
+    />
     <script src="./pokeapi-js-wrapper.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="./script.js"></script>
@@ -123,7 +129,7 @@
         />
       </div>
       <div class="button-content">
-        <a href="./order.html" class="button">
+        <a href="./Poke-Game/index.html" class="button">
           <span class="button-text"> Zur Demo </span>
           <img class="button-bisasam" src="./images/bisasam.png" />
           <img class="button-schiggy" src="./images/schiggy.png" />
@@ -137,13 +143,13 @@
     </header>
     <!--navbar-section-->
     <div class="region-navbar">
-      <button class="navbar-button" onclick="getPokemonsFromKanto()">
+      <button class="navbar-button hover" onclick="getPokemonsFromKanto(true)">
         Kanto
       </button>
-      <button class="navbar-button" onclick="getPokemonsFromJohto()">
+      <button class="navbar-button hover2" onclick="getPokemonsFromJohto(true)">
         Johto
       </button>
-      <button class="navbar-button" onclick="getPokemonsFromHoenn()">
+      <button class="navbar-button hover3" onclick="getPokemonsFromHoenn(true)">
         Hoenn
       </button>
     </div>
@@ -152,13 +158,13 @@
       onclick="closePokemonCardLarge()"
       id="big-card"
       class="big-card d-none"
-    >
-      <div id="big-card-overlay" class="big-card-overlay d-none"></div>
-    </div>
+    ></div>
     <!--content-section-->
     <div class="main-content" id="main-content"></div>
     <div class="render-button">
-      <button onclick="renderMore()" id="renderMore">Load more Pokemon</button>
+      <button onclick="renderMore()" id="renderMore">
+        Weitere Pokemon laden
+      </button>
     </div>
   </body>
 </html>

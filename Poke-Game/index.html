@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poke-Game</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./img/pokeball-favicon.png"
+      type="image/x-icon"
+    />
+    <style></style>
+  </head>
+
+  <div class="contentDiv">
+    <div class="overlappingDiv" id="overlappingDiv"></div>
+
+    <canvas></canvas>
+    <div class="character-dialoque" id="characterDialogueBox"></div>
+
+    <div class="userInterface" id="userInterface">
+      <!-- Bisaflor health bar-->
+      <div class="bisaflor-health-bar">
+        <h1 class="health-bar-names">Bisaflor-Verschnitt</h1>
+        <div class="underground-container">
+          <div class="underground-health"></div>
+          <div class="enemyHealthBar" id="enemyHealthBar"></div>
+        </div>
+      </div>
+
+      <!-- Glurak health bar -->
+      <div class="info-container">
+        <h1 class="health-bar-names">Glurak-Verschnitt</h1>
+        <div class="underground-container">
+          <div class="underground-health"></div>
+          <div class="playerHealthBar" id="playerHealthBar"></div>
+        </div>
+      </div>
+
+      <div class="info-container-2">
+        <div class="dialogueBox" id="dialogueBox"></div>
+        <div class="attack-box" id="attacksBox"></div>
+        <div class="type-box">
+          <h1 class="attackType" id="attackType">Attacken-Typ</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="under-the-map">
+    <div class="test">Steuerung: <img class="wasd" src="./img/wasd.png" /></div>
+    <div class="button-content">
+      <a href="../index.html" class="button contaner-around">
+        <span class="button-text"> Bring mich zurück </span>
+        <img class="button-bisasam" src="./img/bisasam.png" />
+        <img class="button-schiggy" src="./img/schiggy.png" />
+        <img class="button-glumanda" src="./img/glumanda.png" />
+        <img class="button-pikachu" src="./img/pikachu.png" />
+        <img class="button-evoli" src="./img/evoli.png" />
+        <img class="button-voltobal" src="./img/voltobal.png" />
+        <img class="button-ditto" src="./img/ditto.png" />
+      </a>
+    </div>
+  </div>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+    integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="./audio.js"></script>
+  <script src="./battleZones.js"></script>
+  <script src="./collisions.js"></script>
+  <script src="./attacks.js"></script>
+  <script src="./monsters.js"></script>
+  <script src="./characters.js"></script>
+  <script src="./map.js"></script>
+  <script src="./classes.js"></script>
+  <script src="./game.js"></script>
+  <script src="./battleScene.js"></script>
+</html>

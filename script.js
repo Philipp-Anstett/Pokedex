@@ -15,6 +15,8 @@ window.closePokemonCardLarge = closePokemonCardLarge;
 window.previousPokemon = previousPokemon;
 window.nextPokemon = nextPokemon;
 window.renderChart = renderChart;
+window.deactivateScroll = deactivateScroll;
+window.activateScroll = activateScroll;
 
 const customOptions = {
   protocol: "https",
@@ -29,6 +31,7 @@ const P = new Pokedex.Pokedex(customOptions);
 let pokemonData = [];
 let loadLimit = 10;
 let ctx = "";
+let pokemonRegion = "Kanto";
 
 async function init() {
   loadingSpinnerActive();
@@ -69,17 +72,27 @@ async function getPokemonData(index) {
   return pokemon;
 }
 
-async function getPokemonsFromKanto() {
+async function getPokemonsFromKanto(setLimitToDefault) {
+  pokemonRegion = "Kanto";
+  if (setLimitToDefault) {
+    loadLimit = 10;
+  }
+  pokemonData = [];
   for (let index = pokemonData.length + 1; index <= loadLimit; index++) {
     if (pokemonData.length > 150) return;
     const pokemon = await getPokemonData(index);
     pokemonData.push(pokemon);
   }
-  loadLimit += 20;
+  renderPokemonCardSmall();
 }
 
-async function getPokemonsFromJohto() {
-  for (let index = 152; index < 252; index++) {
+async function getPokemonsFromJohto(setLimitToDefault) {
+  pokemonRegion = "Johto";
+  if (setLimitToDefault) {
+    loadLimit = 10;
+  }
+  pokemonData = [];
+  for (let index = 152; index < 152 + loadLimit; index++) {
     if (pokemonData.length > 251) return;
     const pokemon = await getPokemonData(index);
     pokemonData.push(pokemon);
@@ -87,8 +100,14 @@ async function getPokemonsFromJohto() {
   renderPokemonCardSmall();
 }
 
-async function getPokemonsFromHoenn() {
-  for (let index = 252; index < 387; index++) {
+async function getPokemonsFromHoenn(setLimitToDefault) {
+  pokemonRegion = "Hoenn";
+  if (setLimitToDefault) {
+    loadLimit = 10;
+  }
+  pokemonData = [];
+  for (let index = 252; index < 252 + loadLimit; index++) {
+    if (pokemonData.length > 387) return;
     const pokemon = await getPokemonData(index);
     pokemonData.push(pokemon);
   }
@@ -108,15 +127,15 @@ function renderPokemonCardSmall() {
 let currentIndexBigCard = 1;
 
 function renderPokemonCardLarge(index) {
-  let largeCardRef = document.getElementById("big-card-overlay");
-  largeCardRef.classList.remove("d-none");
-  largeCardRef.classList.add("d-flex");
   let largeContentRef = document.getElementById("big-card");
+  largeContentRef.classList.remove("d-none");
+  largeContentRef.classList.add("d-flex");
   largeContentRef.classList.add("z");
   const pokemonIndex = pokemonData[index - 1];
-  largeCardRef.innerHTML = getBigCardTemplate(pokemonIndex);
+  largeContentRef.innerHTML = getBigCardTemplate(pokemonIndex);
   currentIndexBigCard = index;
   renderChart(pokemonIndex);
+  deactivateScroll();
 }
 
 function previousPokemon(currentIndexBigCard) {
@@ -134,9 +153,11 @@ function nextPokemon(currentIndexBigCard) {
 }
 
 function closePokemonCardLarge() {
-  let largeCardRef = document.getElementById("big-card-overlay");
-  largeCardRef.classList.add("d-none");
-  largeCardRef.classList.remove("display-flex");
+  let largeContentRef = document.getElementById("big-card");
+  largeContentRef.classList.add("d-none");
+  largeContentRef.classList.remove("d-flex");
+  largeContentRef.classList.remove("z");
+  activateScroll();
 }
 
 function searchPokemon() {
@@ -155,8 +176,19 @@ function searchPokemon() {
 }
 
 async function renderMore() {
-  loadingSpinnerActive();
-  await getPokemonsFromKanto();
+  loadingSpinnerActive;
+  loadLimit += 20;
+  switch (pokemonRegion) {
+    case "Kanto":
+      await getPokemonsFromKanto(false);
+      break;
+    case "Johto":
+      await getPokemonsFromJohto(false);
+      break;
+    case "Hoenn":
+      await getPokemonsFromHoenn(false);
+      break;
+  }
   renderPokemonCardSmall();
   hideLoadingSpinner();
 }
@@ -168,7 +200,6 @@ async function renderChart(pokemonIndex) {
     labels: ["KP", "Ang", "Vert", "Sp-Ang", "Sp-Vert", "Init"],
     datasets: [
       {
-        label: "Pokemon-Statuswerte",
         data: [
           pokemonIndex.stats[0].base_stat,
           pokemonIndex.stats[1].base_stat,
@@ -185,8 +216,7 @@ async function renderChart(pokemonIndex) {
           "turquoise",
           "blue",
         ],
-        borderColor: "black" /*"#ffd700",*/,
-        color: "black",
+        borderColor: "black" /*"#ffd700"*/,
       },
     ],
   };
@@ -194,6 +224,32 @@ async function renderChart(pokemonIndex) {
   new Chart(ctx, {
     type: "bar",
     data: data,
-    options: {},
+    options: {
+      scales: {
+        x: {
+          ticks: {
+            color: "black",
+          },
+        },
+        y: {
+          ticks: {
+            color: "black",
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
   });
+}
+
+function deactivateScroll() {
+  document.body.classList.add("scroll-behaviour");
+}
+
+function activateScroll() {
+  document.body.classList.remove("scroll-behaviour");
 }
