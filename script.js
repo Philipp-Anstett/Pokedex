@@ -17,6 +17,8 @@ window.nextPokemon = nextPokemon;
 window.renderChart = renderChart;
 window.deactivateScroll = deactivateScroll;
 window.activateScroll = activateScroll;
+window.loadingSpinnerActive = loadingSpinnerActive;
+window.hideLoadingSpinner = hideLoadingSpinner;
 
 const customOptions = {
   protocol: "https",
@@ -127,6 +129,8 @@ function renderPokemonCardSmall() {
 let currentIndexBigCard = 1;
 
 function renderPokemonCardLarge(index) {
+  if (index > 151 && index < 251) index = index - 151;
+  if (index > 251) index = index - 251;
   let largeContentRef = document.getElementById("big-card");
   largeContentRef.classList.remove("d-none");
   largeContentRef.classList.add("d-flex");
@@ -139,6 +143,10 @@ function renderPokemonCardLarge(index) {
 }
 
 function previousPokemon(currentIndexBigCard) {
+  if (currentIndexBigCard > 151 && currentIndexBigCard < 251)
+    currentIndexBigCard = currentIndexBigCard - 151;
+  if (currentIndexBigCard > 251)
+    currentIndexBigCard = currentIndexBigCard - 251;
   if (currentIndexBigCard > 1) {
     currentIndexBigCard--;
     renderPokemonCardLarge(currentIndexBigCard);
@@ -146,6 +154,10 @@ function previousPokemon(currentIndexBigCard) {
 }
 
 function nextPokemon(currentIndexBigCard) {
+  if (currentIndexBigCard > 151 && currentIndexBigCard < 251)
+    currentIndexBigCard = currentIndexBigCard - 151;
+  if (currentIndexBigCard > 251)
+    currentIndexBigCard = currentIndexBigCard - 251;
   if (currentIndexBigCard < 151) {
     currentIndexBigCard++;
     renderPokemonCardLarge(currentIndexBigCard);
@@ -176,7 +188,7 @@ function searchPokemon() {
 }
 
 async function renderMore() {
-  loadingSpinnerActive;
+  loadingSpinnerActive();
   loadLimit += 20;
   switch (pokemonRegion) {
     case "Kanto":
